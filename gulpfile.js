@@ -1,11 +1,6 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 
-gulp.task('hello',function(){
-    console.log('Привет мир!');
-    done();
-})
-
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -14,3 +9,5 @@ gulp.task('browser-sync', function() {
     });
     gulp.watch("*.html").on("change", browserSync.reload);
 });
+
+ 
