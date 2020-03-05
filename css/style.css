@@ -74,6 +74,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */ }
 
@@ -307,6 +308,15 @@ template {
   max-width: 1256px;
   margin: auto; }
 
+.block {
+  -webkit-animation-name: show;
+  animation-name: show;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  animation-direction: reverse; }
+
 .header {
   background-color: #131313;
   padding: 24px 0; }
@@ -340,6 +350,20 @@ template {
     background-color: #e3b873;
     color: #ffffff; }
 
+@font-face {
+  font-family: 'Futura Book';
+  src: url("../fonts/FuturaBookC.woff") format("woff"), url("../fonts/FuturaBookC.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: wrap; }
+
+@font-face {
+  font-family: 'Futura Demi';
+  src: url("../fonts/FuturaDemiC.woff") format("woff"), url("../fonts/FuturaDemiC.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: wrap; }
+
 body {
-  font-family: sans-serif;
+  font-family: 'Futura Book' sans-serif;
   font-size: 14px; }
