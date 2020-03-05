@@ -382,6 +382,8 @@ template {
     min-width: 247px;
     min-height: 97px;
     background-color: #131313; }
+  .hero__button {
+    margin-right: 20px; }
 
 .instagram {
   background-color: #131313;
