@@ -340,7 +340,8 @@ template {
   text-decoration: none;
   color: #ffffff;
   text-transform: uppercase;
-  margin-right: 40px; }
+  margin-right: 40px;
+  transition: 0.3s; }
   .nav__item:hover {
     color: #e3b873; }
 
@@ -363,6 +364,8 @@ template {
   .hero::before {
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(19, 19, 19, 0.7); }
@@ -469,3 +472,19 @@ template {
 body {
   font-family: 'Futura Book';
   font-size: 14px; }
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Yeseva One',cursive; }
+  .section-title__image {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .section-title__image::before, .section-title__image::after {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background-color: #e3b873;
+      margin: 0px 10px;
+      border-radius: 2px; }
