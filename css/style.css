@@ -329,22 +329,22 @@ template {
 
 .menu {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center; }
 
 .logo {
   color: #e3b873;
+  margin-right: 100px;
   text-transform: uppercase;
-  font-size: 0.988rem;
-  margin-right: 3rem; }
+  font-size: 1.075rem; }
 
 .nav__item {
   text-decoration: none;
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  margin-right: 2.4rem;
-  transition: 0.3s; }
+  font-size: 1rem;
+  transition: 0.3s;
+  margin-right: 2.8rem; }
   .nav__item:hover {
     color: #e3b873; }
 
@@ -352,8 +352,9 @@ template {
   color: #e3b873; }
 
 .contacts__phone {
-  font-size: 0.9rem;
-  margin-right: 2.5rem; }
+  margin-left: 5rem;
+  margin-right: 3rem;
+  font-size: 1rem; }
 
 .hero {
   position: relative;
@@ -377,7 +378,7 @@ template {
     max-width: 50.86rem;
     margin-left: 7.88rem; }
   .hero__text {
-    font-size: 1.43rem;
+    font-size: 1.56rem;
     line-height: 140%;
     max-width: 500px; }
   .hero__instagram {
@@ -436,11 +437,11 @@ template {
 
 .title {
   font-family: 'Yeseva One';
-  max-width: 400px;
+  max-width: 500px;
   text-transform: uppercase;
-  font-size: 2.5rem;
-  line-height: 1.4;
-  margin: 0; }
+  font-size: 2.857rem;
+  line-height: 1.3;
+  margin-bottom: 0px; }
   .title--primary {
     color: #e3b873; }
 
@@ -462,20 +463,17 @@ template {
     background-color: transparent;
     color: #ffffff; }
 
-.contacts {
-  margin-left: 2.1rem; }
-  .contacts__button {
-    margin-left: 10px;
-    padding: 11px 19px;
-    font-size: 0.875rem; }
+.contacts__button {
+  padding: 11px 19px;
+  font-size: 1rem; }
 
 .hero__button {
-  margin-top: 1rem;
-  font-size: 0.88rem;
-  padding: 16px 23px 17px 22px; }
+  margin-top: 1.7rem;
+  font-size: 0.95rem;
+  padding: 18px 26px 17px 26px; }
   .hero__button--outline {
-    font-size: 0.88rem;
-    padding: 16px 39px 17px; }
+    font-size: 0.95rem;
+    padding: 18px 44px; }
 
 @font-face {
   font-family: 'Futura Book';
