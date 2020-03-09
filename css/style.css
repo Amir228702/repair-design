@@ -336,7 +336,7 @@ template {
   color: #e3b873;
   text-transform: uppercase;
   font-size: 0.988rem;
-  margin-right: 2.4rem; }
+  margin-right: 3rem; }
 
 .nav__item {
   text-decoration: none;
@@ -375,12 +375,10 @@ template {
   .hero__content {
     position: relative;
     max-width: 50.86rem;
-    margin-top: 2.9rem;
-    margin-left: 8.48rem;
-    margin-bottom: 218px; }
+    margin-left: 7.88rem; }
   .hero__text {
     font-size: 1.43rem;
-    line-height: 130%;
+    line-height: 140%;
     max-width: 500px; }
   .hero__instagram {
     position: absolute;
@@ -441,7 +439,8 @@ template {
   max-width: 400px;
   text-transform: uppercase;
   font-size: 2.5rem;
-  line-height: 1.4; }
+  line-height: 1.4;
+  margin: 0; }
   .title--primary {
     color: #e3b873; }
 
@@ -464,18 +463,19 @@ template {
     color: #ffffff; }
 
 .contacts {
-  margin-left: 2rem; }
+  margin-left: 2.1rem; }
   .contacts__button {
+    margin-left: 10px;
     padding: 11px 19px;
     font-size: 0.875rem; }
 
 .hero__button {
   margin-top: 1rem;
   font-size: 0.88rem;
-  padding: 15px 23px 16px 22px; }
+  padding: 16px 23px 17px 22px; }
   .hero__button--outline {
     font-size: 0.88rem;
-    padding: 15px 39px 16px; }
+    padding: 16px 39px 17px; }
 
 @font-face {
   font-family: 'Futura Book';
