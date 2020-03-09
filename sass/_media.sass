@@ -3,10 +3,15 @@
         font-size: 12px
     .nav
         &__item
-            margin-right: 1rem
+            margin-right: 2.6rem
+@media screen and ( max-width:1077px)
+    .phone
+        display: none
 @media screen and ( max-width:992px)
     .nav
         display: none
+    .phone
+        display: inline
     .hero
         &__instagram
             display: none
@@ -31,6 +36,10 @@
             font-size: 1.29rem
             margin-bottom: 2.28rem 
         &__button
+            display: block
+            min-width: 22.86rem
+            margin-bottom: 1.85rem
+        &__button--outline
             display: block
             min-width: 22.86rem
             margin-bottom: 1.85rem
