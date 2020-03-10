@@ -491,6 +491,30 @@ template {
   left: 0;
   bottom: -1.79rem; }
 
+.design__section-title {
+  margin-bottom: 2rem; }
+
+.design__card__pricetag {
+  font-size: 1.29rem;
+  font-family: 'Yeseva One',cursive;
+  text-transform: uppercase;
+  background-color: #e3b873;
+  color: #ffffff;
+  padding: 1.214rem 5.7rem 1.214rem 2.5rem;
+  position: absolute;
+  left: 0;
+  bottom: -1.79rem; }
+
+.section-title-text {
+  margin: 0 auto;
+  font-style: normal;
+  text-align: center;
+  max-width: 52.857rem;
+  line-height: 1.928rem;
+  font-family: 'Futura Book';
+  font-size: 1.429rem;
+  margin-bottom: 3.3rem; }
+
 .button {
   border: none;
   border-radius: 2px;
@@ -599,13 +623,17 @@ img {
     margin-left: 0; } }
 
 @media screen and (max-width: 750px) {
+  .design__card {
+    margin-bottom: 5rem; }
   .row {
     flex-direction: column;
     align-items: center; }
   .types__card {
     margin-bottom: 5rem; }
   .card__text {
-    margin-left: 0; } }
+    margin-left: 0; }
+  .card__item:nth-child(n+8) {
+    display: none; } }
 
 @media screen and (max-width: 576px) {
   .contacts__phone {
@@ -631,7 +659,13 @@ img {
   .hero__button--outline {
     display: block;
     min-width: 22.86rem;
-    margin-bottom: 1.85rem; } }
+    margin-bottom: 1.85rem; }
+  .design {
+    background-color: #000000; }
+    .design__section-title {
+      color: #ffffff; }
+  .section-title-text {
+    color: #fff; } }
 
 @media screen and (max-height: 600px) {
   .hero__scroll-down {

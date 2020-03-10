@@ -28,6 +28,9 @@
         &__content
             margin-left: 0
 @media screen and ( max-width:750px)
+    .design
+        &__card
+            margin-bottom: 5rem
     .row
         flex-direction: column
         align-items: center
@@ -37,6 +40,9 @@
     .card
         &__text
             margin-left: 0
+        &__item:nth-child(n+8)
+            display: none
+            
 @media screen and ( max-width:576px)
     .contacts
         &__phone
@@ -64,6 +70,12 @@
             display: block
             min-width: 22.86rem
             margin-bottom: 1.85rem
+    .design
+        background-color: #000000
+        &__section-title
+            color: #ffffff
+    .section-title-text
+        color: #fff
 @media screen and ( max-height:600px)
     .hero
         &__scroll-down
