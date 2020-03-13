@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const switchModal = () =>{
         modal.classList.toggle('modal--visible');
     }
+    /*
     modalBtn.forEach(element =>{
         element.addEventListener('click', switchModal);
     });
+    
     closeBtn.addEventListener('click', switchModal);
+    */
     document.addEventListener("click", e=>{
         if(e.target==modal){
             modal.classList.remove("modal--visible");
@@ -22,4 +25,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     })
 });
-
+$(document).ready(function() {
+    var modal = $('.modal'),
+        modalBtn = $('[data-toggle=modal]'),
+        closeBtn  = $('.modal__close'),
+        closeByTouch = $('.modal__dialog');
+    modalBtn.on('click', function(){
+        modal.toggleClass('modal--visible');
+    })
+    closeBtn.on('click', function(){
+        modal.toggleClass('modal--visible');
+    })
+});
