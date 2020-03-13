@@ -574,6 +574,17 @@ template {
   .modal__button {
     align-self: flex-end; }
 
+.scrollup {
+  width: 40px;
+  height: 40px;
+  opacity: 0.3;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  display: none;
+  text-indent: -9999px;
+  background: url("../img/scroll_up.png") no-repeat; }
+
 .button {
   border: none;
   border-radius: 2px;
