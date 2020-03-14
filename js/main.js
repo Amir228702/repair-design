@@ -18,12 +18,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             modal.classList.remove("modal--visible");
         }
     })
+    /*
     document.addEventListener("keyup",e =>{
         const key = e.keyCode ;
         if(key===27){
             document.querySelector(".modal").classList.remove("modal--visible");
         }
-    })
+    })*/
 });
 $(document).ready(function() {
     var modal = $('.modal'),
@@ -35,7 +36,12 @@ $(document).ready(function() {
     })
     closeBtn.on('click', function(){
         modal.toggleClass('modal--visible');
-    }) 
+    })
+    $(document).keyup(function(event) {
+        if (event.which == "27") {
+          $(".modal").removeClass("modal--visible");
+        }
+    });
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
         $('.scrollup').fadeIn();
