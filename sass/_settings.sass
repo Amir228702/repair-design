@@ -8,13 +8,41 @@ body
 img
     max-width: 100%
 .section
+    padding: 60px 0
     &--dark
         background-color: $dark
-        color: $light 
-        padding: 60px 0
+        color: $light
+    &__subtitle
+        text-transform: uppercase
+        font-size: 1.13rem
+        line-height: 1.5rem
+        margin-bottom: 0
+        display: block
+        &--primary
+            color: $primary
+        &__number
+            font-weight: normal
+            font-family: Yeseva One
+            font-size: 1.3rem
+            margin-bottom: 1.5rem
     &-title
         text-align: center
         font-weight: normal
+        &-work
+            &__heading
+                font-size: 1.9rem
+                margin-top: 1rem
+                margin-right: 2rem
+            &__word
+                display: flex 
+                align-items: center
+                &::after
+                    content: ''
+                    width: 90px
+                    height: 1px
+                    background-color: $primary
+                    margin-left: 6.4rem
+
         &-projects
             &__heading
                 font-weight: normal
@@ -32,7 +60,7 @@ img
         &__text
             font-size: 1.28rem
             line-height: 2.07rem
-            max-width: 35.57rem
+            max-width: 31.57rem
             margin-bottom: 2.2rem
         &--left
             text-align: left

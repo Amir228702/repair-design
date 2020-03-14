@@ -333,8 +333,7 @@ template {
   width: 55%; }
 
 .col-40 {
-  width: 40%;
-  margin-right: 5%; }
+  width: 40%; }
 
 .header {
   position: fixed;
@@ -601,6 +600,8 @@ template {
   .swiper-slide__text {
     flex-basis: 37%;
     padding-bottom: 2rem; }
+    .swiper-slide__text__about {
+      flex-basis: 65%; }
   .swiper-slide__heading {
     font-size: 1.285rem;
     line-height: 1.78rem;
@@ -610,14 +611,12 @@ template {
     text-transform: uppercase;
     margin-bottom: 0.64rem; }
 
-.swiper-pagination {
-  margin-top: 5rem; }
-  .swiper-pagination-bullet {
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 10px;
-    height: 10px; }
-    .swiper-pagination-bullet-active {
-      background-color: #ffffff; }
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 10px;
+  height: 10px; }
+  .swiper-pagination-bullet-active {
+    background-color: #ffffff; }
 
 .swiper-button-prev {
   bottom: 0;
@@ -643,6 +642,19 @@ template {
 .swiper-container-horizontal > .swiper-pagination-bullets {
   width: auto;
   bottom: -1px; }
+
+.section-work {
+  background-color: #131313;
+  color: #ffffff; }
+
+.swiper-slider__text__about {
+  line-height: 1.8rem; }
+
+.col-work-1 {
+  margin-top: 3.7rem; }
+
+.block-word {
+  display: block; }
 
 .button {
   border: none;
@@ -757,51 +769,77 @@ body {
 img {
   max-width: 100%; }
 
-.section--dark {
-  background-color: #131313;
-  color: #ffffff;
+.section {
   padding: 60px 0; }
-
-.section-title {
-  text-align: center;
-  font-weight: normal; }
-  .section-title-projects__heading {
-    font-weight: normal;
-    font-size: 1.78rem;
-    line-height: 2.84rem; }
-  .section-title__word {
-    display: flex;
-    align-items: center; }
-    .section-title__word::after {
-      content: '';
-      width: 90px;
-      height: 1px;
-      background-color: #e3b873;
-      margin-left: 2rem; }
-  .section-title__text {
-    font-size: 1.28rem;
-    line-height: 2.07rem;
-    max-width: 35.57rem;
-    margin-bottom: 2.2rem; }
-  .section-title--left {
-    text-align: left; }
-  .section-title__heading {
+  .section--dark {
+    background-color: #131313;
+    color: #ffffff; }
+  .section__subtitle {
     text-transform: uppercase;
-    font-family: 'Yeseva One',cursive;
-    line-height: 138.6%; }
-    .section-title__heading--primary {
+    font-size: 1.13rem;
+    line-height: 1.5rem;
+    margin-bottom: 0;
+    display: block; }
+    .section__subtitle--primary {
       color: #e3b873; }
-  .section-title__image {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .section-title__image::before, .section-title__image::after {
-      content: '';
-      width: 32px;
-      height: 2px;
-      background-color: #e3b873;
-      margin: 0px 10px;
-      border-radius: 2px; }
+    .section__subtitle__number {
+      font-weight: normal;
+      font-family: Yeseva One;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem; }
+  .section-title {
+    text-align: center;
+    font-weight: normal; }
+    .section-title-work__heading {
+      font-size: 1.9rem;
+      margin-top: 1rem;
+      margin-right: 2rem; }
+    .section-title-work__word {
+      display: flex;
+      align-items: center; }
+      .section-title-work__word::after {
+        content: '';
+        width: 90px;
+        height: 1px;
+        background-color: #e3b873;
+        margin-left: 6.4rem; }
+    .section-title-projects__heading {
+      font-weight: normal;
+      font-size: 1.78rem;
+      line-height: 2.84rem; }
+    .section-title__word {
+      display: flex;
+      align-items: center; }
+      .section-title__word::after {
+        content: '';
+        width: 90px;
+        height: 1px;
+        background-color: #e3b873;
+        margin-left: 2rem; }
+    .section-title__text {
+      font-size: 1.28rem;
+      line-height: 2.07rem;
+      max-width: 31.57rem;
+      margin-bottom: 2.2rem; }
+    .section-title--left {
+      text-align: left; }
+    .section-title__heading {
+      text-transform: uppercase;
+      font-family: 'Yeseva One',cursive;
+      line-height: 138.6%; }
+      .section-title__heading--primary {
+        color: #e3b873; }
+    .section-title__image {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .section-title__image::before, .section-title__image::after {
+        content: '';
+        width: 32px;
+        height: 2px;
+        background-color: #e3b873;
+        margin: 0px 10px;
+        border-radius: 2px; }
 
 @media screen and (max-width: 1500px) {
   .phone {
