@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function(event) { 
     const modal = document.querySelector('.modal');
     const modalBtn = document.querySelectorAll('[data-toggle=modal]');
@@ -12,20 +13,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     
     closeBtn.addEventListener('click', switchModal);
-    */
+    
     document.addEventListener("click", e=>{
         if(e.target==modal){
             modal.classList.remove("modal--visible");
         }
     })
-    /*
     document.addEventListener("keyup",e =>{
         const key = e.keyCode ;
         if(key===27){
             document.querySelector(".modal").classList.remove("modal--visible");
         }
-    })*/
+    })
 });
+*/
 $(document).ready(function() {
     var modal = $('.modal'),
         modalBtn = $('[data-toggle=modal]'),
