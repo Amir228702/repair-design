@@ -5,7 +5,7 @@
         flex-wrap: wrap
         margin-bottom: 5.35rem
         &__text
-            flex-basis: 37%
+            flex-basis: 34%
             padding-bottom: 2rem
             &__about
                 flex-basis: 65%
@@ -20,8 +20,8 @@
     &-pagination
         &-bullet
             background-color: rgba($light, 0.3)
-            width: 10px
-            height: 10px
+            width: 0.714rem
+            height: 0.714rem
             &-active
                 background-color: $light
     &-button
@@ -29,9 +29,9 @@
             bottom: 0
             top: auto
             background: url('../img/arrow-prev.svg') no-repeat center
-            background-size: 42px
-            width: 42px 
-            height: 14px
+            background-size: 3rem
+            width: 3rem
+            height: 1rem
             left: 0
             &::after
                 display: none
@@ -39,11 +39,13 @@
             bottom: 0
             top: auto
             background: url('../img/arrow-next.svg') no-repeat center
-            background-size: 42px
-            width: 42px 
-            height: 14px
+            background-size: 3rem
+            width: 3rem
+            height: 1rem
             &::after
                 display: none
 .swiper-container-horizontal>.swiper-pagination-bullets
     width: auto
     bottom: -1px
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 8px

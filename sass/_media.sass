@@ -28,19 +28,35 @@
         &__content
             margin-left: 0
 @media screen and ( max-width:750px)
+    .col
+        &-100
+            width: 100%
+            margin-bottom: 2.5rem
+    .swiper
+        &-slide
+            display: flex
+            flex-wrap: wrap
+            &-img
+                margin-top: 2rem
+            &__text
+                padding-bottom: 0
+                margin: 0
     .section
+        &-work
+            display: none
         &-title
             text-align: center
+            &--left
+                text-align: left
+                min-width: 21.42rem
             &__word
-                display: inline
+                display: block
                 &::after
                     display: none
-                &-projects
-                    &__heading
     .col-40
-        order: 2
-    .col-60
         order: 1
+    .col-60
+        order: 2
     .design
         &__card
             margin-bottom: 5rem
