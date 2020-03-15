@@ -24,28 +24,47 @@
             height: 0.714rem
             &-active
                 background-color: $light
+    &-pagination-1
+        position: absolute
+        &-bullet
+            position: absolute
+            background-color: rgba($light, 0.3)
+            width: 0.714rem
+            height: 0.714rem
+            &-active
+                background-color: 
     &-button
-        &-prev
+        &-next-1,&-prev-1
+            cursor: pointer
+            position: absolute
             bottom: 0
             top: auto
+            background-size: 3rem
+            width: 3rem
+            height: 1rem
+            left: 0
+        &-prev-1
             background: url('../img/arrow-prev.svg') no-repeat center
+        &-next-1
+            background: url('../img/arrow-next.svg') no-repeat center
+        &-prev,&-next
+            bottom: 0
+            top: auto
             background-size: 3rem
             width: 3rem
             height: 1rem
             left: 0
             &::after
                 display: none
+        &-prev
+            background: url('../img/arrow-prev.svg') no-repeat center
         &-next
-            bottom: 0
-            top: auto
             background: url('../img/arrow-next.svg') no-repeat center
-            background-size: 3rem
-            width: 3rem
-            height: 1rem
-            &::after
-                display: none
+
+
 .swiper-container-horizontal>.swiper-pagination-bullets
     width: auto
-    bottom: -1px
+    bottom: -3px
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet
     margin: 0 8px
+    

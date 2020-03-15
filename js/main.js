@@ -26,6 +26,17 @@ $(document).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, 800);
         return false;
         });
+    var mySwiper = new Swiper ('.swiper-container-1', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination-1',
+                type: 'bullets',
+              },
+            navigation: {
+                nextEl: '.swiper-button-next-1',
+                prevEl: '.swiper-button-prev-1',
+              },
+        })
     var mySwiper = new Swiper ('.swiper-container', {
         loop: true,
         pagination: {
@@ -37,6 +48,13 @@ $(document).ready(function() {
             prevEl: '.swiper-button-prev',
           },
     })
+    var next_1 = $('.swiper-button-next-1');
+    var prev_1 = $('.swiper-button-prev-1');
+    var bullets_1 = $('.swiper-pagination-1');
+
+    next_1.css('left', prev_1.width() + 10 + bullets_1.width() + 10)
+    bullets_1.css('left',prev_1.width() + 10)
+
     var next = $('.swiper-button-next');
     var prev = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
