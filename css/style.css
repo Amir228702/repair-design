@@ -548,7 +548,20 @@ template {
 .types__section-title {
   margin-bottom: 2rem; }
 
+.types__card {
+  -webkit-animation-name: slide;
+  animation-name: slide;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s; }
+
 .card__text {
+  transform-origin: 0 0;
+  -webkit-animation-name: size;
+  animation-name: size;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
   max-width: 23.6rem;
   margin: 0 auto;
   margin-top: -9.3rem;
@@ -572,6 +585,10 @@ template {
   margin-bottom: 2.5rem; }
 
 .card__pricetag {
+  -webkit-animation-name: zoom;
+  animation-name: zoom;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
   font-size: 1.29rem;
   font-family: 'Yeseva One',cursive;
   text-transform: uppercase;
@@ -582,10 +599,22 @@ template {
   left: 0;
   bottom: -1.79rem; }
 
+.design__card {
+  -webkit-animation-name: size;
+  animation-name: size;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s; }
+
 .design__section-title {
   margin-bottom: 2rem; }
 
 .design__card__pricetag {
+  -webkit-animation-name: zoom;
+  animation-name: zoom;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
   font-size: 1.29rem;
   font-family: 'Yeseva One',cursive;
   text-transform: uppercase;
@@ -597,6 +626,11 @@ template {
   bottom: -1.79rem; }
 
 .section-title-text {
+  transform-origin: 0 0;
+  -webkit-animation-name: size;
+  animation-name: size;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
   margin: 0 auto;
   font-style: normal;
   text-align: center;
@@ -959,6 +993,12 @@ img {
         margin: 0px 10px;
         border-radius: 2px; }
 
+.hidden {
+  opacity: 0; }
+
+.visible {
+  opacity: 1; }
+
 @media screen and (max-width: 1500px) {
   .phone {
     margin-left: 0; }
@@ -1076,3 +1116,41 @@ img {
 @media screen and (max-height: 600px) {
   .hero__scroll-down {
     display: none; } }
+
+@-webkit-keyframes slide {
+  0% {
+    transform: scale(0, 0) translateY(0); }
+  15%, 70% {
+    transform: scale(1, 1) translateY(0); }
+  100% { } }
+
+@keyframes slide {
+  0% {
+    transform: scale(0, 0) translateY(0); }
+  15%, 70% {
+    transform: scale(1, 1) translateY(0); }
+  100% { } }
+
+@-webkit-keyframes size {
+  0%, 15% {
+    transform: scale(1, 0); }
+  25%, 100% {
+    transform: scale(1, 1); } }
+
+@keyframes size {
+  0%, 15% {
+    transform: scale(1, 0); }
+  25%, 100% {
+    transform: scale(1, 1); } }
+
+@-webkit-keyframes zoom {
+  0%, 25% {
+    transform: scale(0, 0); }
+  35%, 100% {
+    transform: scale(1, 1); } }
+
+@keyframes zoom {
+  0%, 25% {
+    transform: scale(0, 0); }
+  35%, 100% {
+    transform: scale(1, 1); } }

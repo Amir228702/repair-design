@@ -1,8 +1,16 @@
 .types
     &__section-title
         margin-bottom: 2rem
+    &__card
+        animation-name: slide 
+        animation-timing-function: ease
+        animation-duration: 15s
+        
 .card
     &__text
+        transform-origin: 0 0
+        animation-name: size
+        animation-duration: 6s
         max-width: 23.6rem
         margin: 0 auto
         margin-top: -9.3rem
@@ -23,6 +31,8 @@
         color: $secondary
         margin-bottom: 2.5rem
     &__pricetag
+        animation-name: zoom
+        animation-duration: 7s
         font-size: 1.29rem
         font-family: 'Yeseva One',cursive
         text-transform: uppercase
