@@ -1,4 +1,3 @@
-
 .swiper
     &-slide
         display: flex
@@ -60,7 +59,33 @@
             background: url('../img/arrow-prev.svg') no-repeat center
         &-next
             background: url('../img/arrow-next.svg') no-repeat center
-
+.steps__tabs
+    font-family: 'Futura Book'
+    list-style-type: none
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    max-width: 54.52rem
+    margin-left: auto
+    margin-top: -1.2rem
+    padding: 0
+    z-index: 2
+    &-item
+        color: $light
+        text-decoration: none
+        display: flex 
+        margin-left: 1rem
+        flex-direction: column
+        flex-basis: 30%
+        margin-bottom: 2.57rem
+    &-number
+        font-family: 'Yeseva One',cursive
+        text-transform: uppercase
+        border-bottom: 1px solid $primary
+        max-width: 1.357rem
+    &-text
+        display: block
+        margin-top: 0.9rem
 
 .swiper-container-horizontal>.swiper-pagination-bullets
     width: auto
