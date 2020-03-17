@@ -763,6 +763,49 @@ template {
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 8px; }
 
+.footer {
+  background: #131313 url("../img/footer-bg.jpg") no-repeat center;
+  padding-top: 3rem; }
+  .footer__menu {
+    background-color: #131313;
+    padding: 4.285rem 0; }
+  .footer-wrap {
+    background-color: #181818;
+    max-width: 63.07rem;
+    margin: auto;
+    padding: 2.5rem;
+    margin-bottom: 3.714rem; }
+  .footer__title {
+    text-transform: uppercase;
+    font-family: 'Yeseva One' , cursive;
+    font-size: 1.428rem;
+    text-align: center;
+    margin-bottom: 3.214rem;
+    margin-top: 0; }
+  .footer__form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 37.142rem;
+    margin: auto;
+    justify-content: space-between; }
+  .footer__input {
+    padding-top: 0.3rem; }
+    .footer__input-group {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 44%;
+      margin-bottom: 3.2rem; }
+      .footer__input-group--full-width {
+        flex-basis: 100%;
+        margin-bottom: 2rem; }
+  .footer__policy {
+    margin-bottom: 3.6rem;
+    flex-basis: 100%; }
+  .footer__button {
+    padding: 18px 62px;
+    font-size: 1.075rem;
+    margin: auto; }
+
 .section-work {
   background-color: #131313;
   color: #ffffff; }
@@ -833,7 +876,8 @@ template {
 
 .policy__label {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  font-size: 1.142rem; }
   .policy__label::before {
     content: '';
     width: 18px;
@@ -842,6 +886,8 @@ template {
     border-radius: 1px;
     cursor: pointer;
     margin-right: 0.64rem; }
+  .policy__label--center {
+    justify-content: center; }
 
 .scrollup {
   width: 40px;
@@ -1044,6 +1090,21 @@ img {
   .section__control {
     background-color: #131313;
     color: #ffffff; }
+  .footer {
+    padding-top: 0;
+    background-color: #000000;
+    background-image: none; }
+    .footer-wrap {
+      background-color: #000000; }
+    .footer__menu {
+      background-color: #000000; }
+    .footer__form {
+      flex-direction: column;
+      flex-basis: 100%; }
+    .footer__button {
+      width: 100%; }
+  .policy__label--left {
+    justify-content: start; }
   .control__video {
     min-width: 24rem;
     min-height: 14.7rem;

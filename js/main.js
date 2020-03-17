@@ -60,22 +60,8 @@ $(document).ready(function() {
 
     next.css('left', prev.width() + 10 + bullets.width() + 10)
     bullets.css('left',prev.width() + 10)
-    $('.anim-block-fdiu').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 100
-    });
-    $('.anim-block-fdr').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeInRight',
-        offset: 100
-    });
-    $('.anim-block-bounce').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated bounce',
-        offset: 100
-    });
-    $('.anim-block-zoom').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated zoomIn',
-        offset: 100
-    });
+    
+    new WOW().init()
 });
 /*
 document.addEventListener("DOMContentLoaded", function(event) { 
