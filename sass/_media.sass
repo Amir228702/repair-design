@@ -7,10 +7,15 @@
     .phone
         margin-right: 0
 @media screen and ( max-width:1200px)
+    .team
+        &__card
+            &__exptag
+                text-align: right
     .phone
         margin-right: 3rem
     html
         font-size: 12px
+
     .nav
         &__item
             margin-right: 2.1rem
@@ -42,6 +47,8 @@
                 padding-bottom: 0
                 margin: 0
     .section
+        &-team
+            background-color: $black
         &-work
             display: none
         &-title
@@ -53,6 +60,14 @@
                 display: block
                 &::after
                     display: none
+            &-team
+                 margin-top: 0
+    .team
+        &__card
+            margin-bottom: 5rem
+        &__main
+            &-text
+                color: $light
     .col-40
         order: 1
     .col-60

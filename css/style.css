@@ -321,7 +321,7 @@ template {
 .row {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between; }
+  justify-content: space-around; }
 
 .col-100 {
   flex-basis: 40%; }
@@ -654,10 +654,12 @@ template {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 3.428rem; }
-    .modal__input:last-of-type {
-      margin-bottom: 0; }
+  .modal__input:last-of-type {
+    margin-bottom: 0; }
   .modal__policy {
     margin-bottom: 2.714rem; }
   .modal__button {
@@ -763,6 +765,88 @@ template {
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 8px; }
 
+.team__title-text {
+  margin-top: 1.5rem;
+  margin-bottom: 5.7rem;
+  max-width: 32rem; }
+
+.team__card-wrap {
+  margin: auto;
+  position: relative;
+  max-width: 16.6rem; }
+
+.team__card-text {
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.714rem;
+  margin-top: -6.2rem; }
+
+.team__card-text {
+  text-align: center; }
+
+.team__card-title {
+  font-family: 'Yeseva One';
+  font-weight: normal;
+  font-size: 1.285rem;
+  margin: 0;
+  line-height: 1.785rem;
+  margin-bottom: 0.3rem; }
+
+.team__card-subtitle {
+  margin: 0;
+  color: #959595;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.285rem; }
+
+.team__card-images {
+  display: flex; }
+
+.team__card__section-title-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 27px;
+  text-align: center; }
+
+.team__card__exptag {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Yeseva One';
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
+  background-color: #e3b873;
+  font-size: 0.92rem;
+  display: block;
+  width: 100%;
+  padding: 15px 30px; }
+
+.team__main-text {
+  max-width: 40.57rem;
+  text-align: center;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.43rem;
+  line-height: 2.43rem; }
+  .team__main-text::before {
+    content: '';
+    width: 55px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #e3b873;
+    display: block;
+    margin: auto;
+    margin-top: 3.9rem;
+    margin-bottom: 0.5rem; }
+
+.sub-image {
+  position: absolute;
+  margin-left: -4rem;
+  margin-top: -3.5rem; }
+
 .footer {
   background: #131313 url("../img/footer-bg.jpg") no-repeat center;
   padding-top: 3rem; }
@@ -808,7 +892,8 @@ template {
 
 .section-work {
   background-color: #131313;
-  color: #ffffff; }
+  color: #ffffff;
+  padding-bottom: 30rem; }
 
 .swiper-slider__text__about {
   line-height: 1.8rem; }
@@ -900,6 +985,12 @@ template {
   text-indent: -9999px;
   background: url("../img/scroll_up.png") no-repeat; }
 
+div.invalid {
+  color: tomato; }
+
+input.invalid {
+  border-bottom: 1px solid tomato; }
+
 @font-face {
   font-family: 'Futura Book';
   src: url("../fonts/FuturaBookC.woff") format("woff"), url("../fonts/FuturaBookC.woff2") format("woff");
@@ -932,6 +1023,8 @@ img {
   .section-projects {
     padding-bottom: 30rem; }
   .section-work {
+    padding-bottom: 40rem; }
+  .section-work {
     display: flex;
     align-items: center; }
   .section--dark {
@@ -956,6 +1049,8 @@ img {
     margin-bottom: 2rem; }
     .section-title-control {
       margin-top: -30rem; }
+    .section-title-team {
+      margin-top: -35rem; }
     .section-title--light {
       color: #ffffff; }
     .section-title-work__heading {
@@ -1026,6 +1121,8 @@ img {
     margin-right: 0; } }
 
 @media screen and (max-width: 1200px) {
+  .team__card__exptag {
+    text-align: right; }
   .phone {
     margin-right: 3rem; }
   html {
@@ -1059,6 +1156,8 @@ img {
     .swiper-slide__text {
       padding-bottom: 0;
       margin: 0; }
+  .section-team {
+    background-color: #181818; }
   .section-work {
     display: none; }
   .section-title {
@@ -1070,6 +1169,12 @@ img {
       display: block; }
       .section-title__word::after {
         display: none; }
+    .section-title-team {
+      margin-top: 0; }
+  .team__card {
+    margin-bottom: 5rem; }
+  .team__main-text {
+    color: #ffffff; }
   .col-40 {
     order: 1; }
   .col-60 {

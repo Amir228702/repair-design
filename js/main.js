@@ -62,6 +62,41 @@ $(document).ready(function() {
     bullets.css('left',prev.width() + 10)
     
     new WOW().init()
+
+    //Validate form
+    $('.modal__form').validate({
+        errorElement: "div",
+        errorClass:"invalid",
+        rules: {
+            // строчное правило
+            userName: {
+                required: true,
+                minlength: 2,
+                maxlength: 15
+            },
+            userPhone: "required",
+            // правило-обьект(блок)
+            userEmail: {
+              required: true,
+              email: true
+            }
+          },
+        messages: {
+            userName: {
+                required: "Заполните поле",
+                minlength: "Имя должно быть не короче двух букв",
+                maxlength: "Имя должно содержать не более 15 букв"
+            },
+            userPhone:"Заполните поле",
+            userEmail: {
+              required: "Обязательно укажите email",
+              email: "Введите корректный email"
+            }
+          }
+    });
+    //Маска для телефона
+
+    $('[type=tel]').mask('+7(000) 000-00-00',{placeholder: "+7(___) ___-__-__"});
 });
 /*
 document.addEventListener("DOMContentLoaded", function(event) { 
