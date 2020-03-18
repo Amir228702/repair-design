@@ -863,7 +863,8 @@ template {
     max-width: 63.07rem;
     margin: auto;
     padding: 2.5rem;
-    margin-bottom: 3.714rem; }
+    margin-bottom: 3.714rem;
+    margin-top: -19rem; }
   .footer__title {
     text-transform: uppercase;
     font-family: 'Yeseva One' , cursive;
@@ -926,6 +927,68 @@ template {
 
 .block-word {
   display: block; }
+
+.clients__tag {
+  display: flex; }
+  .clients__tag__left {
+    justify-content: space-evenly;
+    border-right: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    background-color: #e3b873;
+    min-width: 9.64rem;
+    color: #ffffff;
+    font-family: 'Yeseva One'; }
+    .clients__tag__left__info {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.214rem;
+      line-height: 1.714rem; }
+  .clients__tag__right {
+    font-family: 'Yeseva One';
+    justify-content: space-evenly;
+    align-items: center;
+    border-left: 1px solid #ffffff;
+    display: flex;
+    background-color: #e3b873;
+    min-width: 11.285rem;
+    color: #ffffff; }
+    .clients__tag__right__info {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.514rem;
+      line-height: 1.714rem; }
+
+.clients__main-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.07rem;
+  color: #959595;
+  line-height: 180%;
+  padding-left: 4px;
+  margin-bottom: 4.5rem; }
+
+.clients__title-text {
+  margin-top: 1.5rem;
+  max-width: 25rem;
+  margin-bottom: 4rem; }
+
+.clients__card {
+  margin-top: 1.2rem;
+  max-width: 26.857rem; }
+  .clients__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0.4rem; }
+  .clients__card__text {
+    padding: 0 2.14rem;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03); }
+  .clients__card__title {
+    max-width: 14.07rem;
+    margin-right: 1.2rem; }
 
 .button {
   border: none;
@@ -1048,6 +1111,8 @@ img {
 
 .section {
   padding: 60px 0; }
+  .section-clients {
+    padding-bottom: 30rem; }
   .section-projects {
     padding-bottom: 30rem; }
   .section-work {
