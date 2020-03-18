@@ -950,6 +950,8 @@ template {
   font-size: 1.285rem;
   color: #ffffff;
   padding: 0.5rem 0; }
+  .input--dark {
+    color: #131313; }
   .input--light {
     color: #ffffff; }
 

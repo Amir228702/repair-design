@@ -63,7 +63,6 @@ $(document).ready(function() {
     
     new WOW().init()
 
-    //Validate form
     $('.modal__form').validate({
         errorElement: "div",
         errorClass:"invalid",
@@ -74,7 +73,10 @@ $(document).ready(function() {
                 minlength: 2,
                 maxlength: 15
             },
-            userPhone: "required",
+            userPhone: {
+                required:true,
+                minlength:17
+            },
             // правило-обьект(блок)
             userEmail: {
               required: true,
@@ -87,14 +89,88 @@ $(document).ready(function() {
                 minlength: "Имя должно быть не короче двух букв",
                 maxlength: "Имя должно содержать не более 15 букв"
             },
-            userPhone:"Заполните поле",
+            userPhone: {
+                required:"Заполните поле",
+                minlength:"Введите корректный номер телефона"
+            },
             userEmail: {
               required: "Обязательно укажите email",
               email: "Введите корректный email"
             }
           }
     });
-    //Маска для телефона
+    
+    $('.control__form').validate({
+        errorElement: "div",
+        errorClass:"invalid",
+        rules: {
+            // строчное правило
+            userName: {
+                required: true,
+                minlength: 2,
+                maxlength: 15
+            },
+            userPhone: {
+                required:true,
+                minlength:17
+            },
+            // правило-обьект(блок)
+            userEmail: {
+              required: true,
+              email: true
+            }
+          },
+        messages: {
+            userName: {
+                required: "Заполните поле",
+                minlength: "Имя должно быть не короче двух букв",
+                maxlength: "Имя должно содержать не более 15 букв"
+            },
+            userPhone: {
+                required:"Заполните поле",
+                minlength:"Введите корректный номер телефона"
+            },
+            userEmail: {
+              required: "Обязательно укажите email",
+              email: "Введите корректный email"
+            }
+          }
+    });
+    $('.footer__form').validate({
+        errorElement: "div",
+        errorClass:"invalid",
+        rules: {
+            // строчное правило
+            userName: {
+                required: true,
+                minlength: 2,
+                maxlength: 15
+            },
+            userPhone: {
+                required:true,
+                minlength:17
+            },
+            userQuestion:{
+                required: true,
+                minlength: 5
+            }
+          },
+        messages: {
+            userName: {
+                required: "Заполните поле",
+                minlength: "Имя должно быть не короче двух букв",
+                maxlength: "Имя должно содержать не более 15 букв"
+            },
+            userPhone: {
+                required:"Заполните поле",
+                minlength:"Введите корректный номер телефона"
+            },
+            userQuestion:{
+              required: "Заполните поле",
+              minlength: "Введите корректный вопрос"
+            }
+          }
+    });
 
     $('[type=tel]').mask('+7(000) 000-00-00',{placeholder: "+7(___) ___-__-__"});
 });
