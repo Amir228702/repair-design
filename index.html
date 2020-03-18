@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" media="screen,projection" href="css/ui.totop.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7b388890-1a09-4a02-9554-e96d0a86e148&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <header class="header">
@@ -484,7 +485,7 @@
     </section>
     <section class="section section-clients"></section>
     </main>
-    <footer class="footer section--dark">
+    <footer class="footer">
         <div class="container">
             <div class="footer-wrap">
                 <h3 class="footer__title">Остались вопросы?</h3>
@@ -507,6 +508,15 @@
                     </div>
                     <button class="button button--primary footer__button">Отправить</button>
                 </form>
+            </div>
+            <div class="footer__coordinations">
+                <div class="footer__coordinations__title title--primary">
+                    <h3>Ростов на дону, Торговый центр Plaza Прямой телефон +7 (999) 768 32 99</h3>
+                </div>
+                <div class="footer__coordinations__marks">
+                    <img src="img/footer/coor-1.svg" alt=""><img src="img/footer/coor-2.svg" alt="">
+                </div>
+                <div class="map footer__map" id="map"></div>
             </div>
         </div>
         <div class="footer__menu">

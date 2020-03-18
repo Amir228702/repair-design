@@ -1,6 +1,11 @@
 .footer
-    background: $dark url('../img/footer-bg.jpg') no-repeat center
+    background: $dark url('../img/footer-bg.jpg') no-repeat center / cover
     padding-top: 3rem
+    &__map
+        margin: 0 auto
+        max-width: 66.07rem
+        margin-bottom: 2rem
+        min-height: 33.214rem
     &__menu
         background-color: $dark
         padding: 4.285rem 0
@@ -17,6 +22,7 @@
         text-align: center
         margin-bottom: 3.214rem
         margin-top: 0
+        color: $light
     &__form
         display: flex
         flex-wrap: wrap
@@ -34,9 +40,28 @@
                 flex-basis: 100%
                 margin-bottom: 2rem
     &__policy
+        color: $light
         margin-bottom: 3.6rem
         flex-basis: 100% 
     &__button
         padding: 18px 62px
         font-size: 1.075rem
         margin: auto
+    &__coordinations
+        &__marks
+            max-width: 5rem
+            margin: auto
+            display: flex
+            justify-content: space-between
+            margin-bottom: 3rem
+
+        &__title
+            max-width: 35rem
+            margin: 0 auto
+            font-family: 'Yeseva One'
+            font-style: normal
+            font-weight: normal
+            font-size: 1.2rem
+            line-height: 2rem
+            text-align: center
+            text-transform: uppercase

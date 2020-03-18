@@ -848,8 +848,13 @@ template {
   margin-top: -3.5rem; }
 
 .footer {
-  background: #131313 url("../img/footer-bg.jpg") no-repeat center;
+  background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
   padding-top: 3rem; }
+  .footer__map {
+    margin: 0 auto;
+    max-width: 66.07rem;
+    margin-bottom: 2rem;
+    min-height: 33.214rem; }
   .footer__menu {
     background-color: #131313;
     padding: 4.285rem 0; }
@@ -865,7 +870,8 @@ template {
     font-size: 1.428rem;
     text-align: center;
     margin-bottom: 3.214rem;
-    margin-top: 0; }
+    margin-top: 0;
+    color: #ffffff; }
   .footer__form {
     display: flex;
     flex-wrap: wrap;
@@ -883,12 +889,29 @@ template {
         flex-basis: 100%;
         margin-bottom: 2rem; }
   .footer__policy {
+    color: #ffffff;
     margin-bottom: 3.6rem;
     flex-basis: 100%; }
   .footer__button {
     padding: 18px 62px;
     font-size: 1.075rem;
     margin: auto; }
+  .footer__coordinations__marks {
+    max-width: 5rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem; }
+  .footer__coordinations__title {
+    max-width: 35rem;
+    margin: 0 auto;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase; }
 
 .section-work {
   background-color: #131313;
@@ -925,6 +948,9 @@ template {
 .contacts__button {
   padding: 11px 19px;
   font-size: 1rem; }
+
+.title--primary {
+  color: #e3b873; }
 
 .hero__button {
   margin-top: 1.7rem;
