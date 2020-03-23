@@ -134,19 +134,19 @@
                 В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. 
                 Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.
             </p>
-            <form action="control-send.php" class="form control__form">
+            <form action="control-send.php"  method="POST" class="form control__form">
                 <div class="control__input-group">
-                    <label for="user-name" class="label form__label control--dark control__label" id="user-name">Имя</label>
-                    <input type="text" name="userName" class="input form__input input--dark control__input" placeholder="Как вас зовут:">
+                    <label for="control-user-name" class="label form__label control--dark control__label">Имя</label>
+                    <input type="text" name="userName" class="input form__input input--dark control__input" placeholder="Как вас зовут:"  id="control-user-name">
                 </div>
                 <div class="control__input-group">
-                    <label for="user-phone" class="label form__label label--dark control__label">Телефон</label>
-                    <input type="tel"  name="userPhone" class="input form__input input--dark control__input" id="user-phone" placeholder="Ваш номер телефона:">
+                    <label for="control-user-phone" class="label form__label label--dark control__label">Телефон</label>
+                    <input type="tel"  name="userPhone" class="input form__input input--dark control__input" id="control-user-phone" placeholder="Ваш номер телефона:">
                 </div>
                 <button class="button button--primary control__button">Отправить</button>
                 <div class="policy control__policy">
-                    <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
-                    <label for="policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой данных</label>
+                    <input type="checkbox" name="controlPolicyCheckbox" id="control__policy-checkbox" class="policy__checkbox" >
+                    <label for="control__policy-checkbox"  class="policy__label control__policy__label">Я соглашаюсь с обработкой данных</label>
                 </div>
             </form>
         </div>
@@ -573,31 +573,31 @@
         <div class="container">
             <div class="footer-wrap">
                 <h3 class="footer__title">Остались вопросы?</h3>
-                <form action="footer-send.php" id="footerForm" class="form footer__form">
+                <form action="footer-send.php"  method="POST" id="footerForm" class="form footer__form">
                     <div class="input-group footer__input-group">
-                        <label for="user-name" class="label form__label label--light" id="user-name">Имя</label>
-                        <input type="text" name="userName" class="input input--light form__input footer__input" placeholder="Как вас зовут:">
+                        <label for="footer-user-name" class="label form__label label--light" >Имя</label>
+                        <input type="text" name="userName" class="input input--light form__input footer__input" placeholder="Как вас зовут:" id="footer-user-name">
                     </div>
                     <div class="input-group footer__input-group">
-                        <label for="user-phone" class="label form__label label--light">Телефон</label>
-                        <input type="tel" name="userPhone" class="input input--light form__input footer__input" id="user-phone" placeholder="Ваш номер телефона:">
+                        <label for="footer-user-phone" class="label form__label label--light">Телефон</label>
+                        <input type="tel" name="userPhone" class="input input--light form__input footer__input" id="footer-user-phone" placeholder="Ваш номер телефона:">
                     </div>
                     <div class="input-group footer__input-group footer__input-group--full-width">
-                        <label for="user-question" class="label  form__label label--light">Вопрос</label>
-                        <input type="text" name="userQuestion" class="input input--light  form__input footer__input--full-width" id="user-question" placeholder="Я хочу спросить:">
+                        <label for="footer-user-question" class="label  form__label label--light">Вопрос</label>
+                        <input type="text" name="userQuestion" class="input input--light  form__input footer__input--full-width" id="footer-user-question" placeholder="Я хочу спросить:">
                     </div>
                     <div class="policy footer__policy">
-                        <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
-                        <label for="policy-checkbox" class="policy__label policy__label--center policy__label--left">Я соглашаюсь с обработкой данных</label>
+                        <input type="checkbox"  name="footerPolicyCheckbox"  id="footer__policy-checkbox" class="policy__checkbox" >
+                        <label for="footer__policy-checkbox"  class="policy__label policy__label--center policy__label--left">Я соглашаюсь с обработкой данных</label>
                     </div>
                     <button class="button button--primary footer__button">Отправить</button>
                 </form>
             </div>
             <div class="footer__coordinations">
-                <div class="footer__coordinations__title title--primary">
+                <div class="footer__coordinations__title title--primary wow lightSpeedIn" data-wow-delay="0.6s">
                     <h3>Ростов на дону, Торговый центр Plaza Прямой телефон +7 (999) 768 32 99</h3>
                 </div>
-                <div class="footer__coordinations__marks">
+                <div class="footer__coordinations__marks ">
                     <img src="img/footer/coor-1.svg" alt=""><img src="img/footer/coor-2.svg" alt="">
                 </div>
                 <div class="map footer__map" >
@@ -610,12 +610,12 @@
                 <div class="menu">
                     <div class="logo menu__logo wow fadeInLeft">Repair Design Project</div>
                     <div class="nav">
-                        <a href="#" class="nav__item">Главная</a>
-                        <a href="#" class="nav__item">Проекты</a>
-                        <a href="#" class="nav__item">Замер</a>
-                        <a href="#" class="nav__item">Команда</a>
-                        <a href="#" class="nav__item">Отзывы</a>
-                        <a href="#" class="nav__item">Контакты</a>
+                        <a href="#" class="nav__item wow fadeInUp" data-wow-delay="0.1s">Главная</a>
+                        <a href="#" class="nav__item wow fadeInUp" data-wow-delay="0.2s">Проекты</a>
+                        <a href="#" class="nav__item wow fadeInUp" data-wow-delay="0.3s">Замер</a>
+                        <a href="#" class="nav__item wow fadeInUp" data-wow-delay="0.4s">Команда</a>
+                        <a href="#" class="nav__item wow fadeInUp" data-wow-delay="0.5s">Отзывы</a>
+                        <a href="#" class="nav__item wow fadeInUp" data-wow-delay="0.6s">Контакты</a>
                     </div>
                     <div class="contacts menu__contacts">
                          <a href="tel:+7 (999) 768-32-99" class="phone contacts__phone">+7 (999) 768-32-99</a>
@@ -657,8 +657,8 @@
                     <input type="email" name="userEmail" class="input input--light form__input modal__input" id="user-email" placeholder="Ваш email:">
                 </div>
                 <div class="policy modal__policy">
-                    <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
-                    <label for="policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
+                    <input type="checkbox" name="modalPolicyCheckbox" id="modal-policy-checkbox" class="policy__checkbox" >
+                    <label for="modal-policy-checkbox"  class="policy__label">Я соглашаюсь с обработкой данных</label>
                 </div>
                 <button class="button button--primary modal__button">Отправить заявку</button>
             </form>
@@ -666,6 +666,14 @@
         <!-- /.modal__dialog -->
     </div>
     <!-- /.modal -->
+    <div class="form__success ">
+        <div class="form__success__dialog">
+            <button class="success__modal__close"></button>
+            <h2>Спасибо за отправку</h2>
+            <p>Ваши даные успешно отправлены.Можете подписаться на группу в ВКонатакте.</p>
+            <a href="https://vk.com/glo_academy"><button class="form__success__button">Кнопка-ссылка</button></a>
+        </div>
+    </div>
   
 <a href="#" class="scrollup">Наверх</a>
 <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>

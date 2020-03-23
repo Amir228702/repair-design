@@ -515,7 +515,9 @@ template {
 
 .control__policy {
   margin-top: 1.2rem;
-  flex-basis: 100%; }
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 2rem auto 0; }
   .control__policy__label {
     font-size: 1.15rem;
     justify-content: center; }
@@ -664,6 +666,66 @@ template {
     margin-bottom: 2.714rem; }
   .modal__button {
     align-self: flex-end; }
+
+#modalPolicyCheckbox-error {
+  text-align: center;
+  margin-top: 2rem;
+  position: absolute; }
+
+.form__success {
+  opacity: 0;
+  position: fixed;
+  visibility: hidden;
+  z-index: 201;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .form__success__dialog {
+    text-align: center;
+    position: relative;
+    max-width: 20.6rem;
+    background: #131313 url("../img/bg-lines.svg") no-repeat center;
+    padding: 2.357rem 3.5rem 1.928rem;
+    color: #ffffff; }
+  .form__success__button {
+    position: relative;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 700;
+    color: #d1d1d9;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 3px;
+    background: linear-gradient(#6e7078, #515156) #6e7078;
+    transition: .2s ease-in-out; }
+    .form__success__button::hover:not(:active) {
+      background: linear-gradient(#7e7e86, #46474c) #7e7e86; }
+    .form__success__button:active {
+      top: 1px;
+      background: linear-gradient(#4c4d52, #38393e) #4c4d52; }
+
+.form__success--visible {
+  opacity: 1;
+  visibility: visible; }
+
+.success__modal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: transparent url("../img/close.svg");
+  border: none;
+  margin: 12px;
+  cursor: pointer; }
 
 .swiper-slide {
   display: flex;
@@ -1045,6 +1107,7 @@ template {
     color: #ffffff; }
 
 .policy__checkbox {
+  text-align: center;
   opacity: 0;
   visibility: hidden; }
   .policy__checkbox:checked + .policy__label::before {
@@ -1081,6 +1144,11 @@ div.invalid {
 
 input.invalid {
   border-bottom: 1px solid tomato; }
+
+#footerPolicyCheckbox-error {
+  position: relative;
+  left: 130px;
+  top: 50px; }
 
 @font-face {
   font-family: 'Futura Book';

@@ -1,12 +1,17 @@
 $(document).ready(function() {
     var modal = $('.modal'),
         modalBtn = $('[data-toggle=modal]'),
-        closeBtn  = $('.modal__close');
+        closeBtn  = $('.modal__close'),
+        successForm = $('.form__success'),
+        successClose = $('.success__modal__close');
+    successClose.on('click', function(){
+        successForm.removeClass('form__success--visible');
+    })
     modalBtn.on('click', function(){
         modal.toggleClass('modal--visible');
     })
     closeBtn.on('click', function(){
-        modal.toggleClass('modal--visible');
+        modal.removeClass('modal--visible');
     })
     $(document).keyup(function(event) {
         if (event.which == "27") {
@@ -81,7 +86,8 @@ $(document).ready(function() {
             userEmail: {
               required: true,
               email: true
-            }
+            },
+            modalPolicyCheckbox: "required"
           },
         messages: {
             userName: {
@@ -96,8 +102,23 @@ $(document).ready(function() {
             userEmail: {
               required: "Обязательно укажите email",
               email: "Введите корректный email"
+            },
+            modalPolicyCheckbox : {
+                required: "Обязательное поле"
             }
-          }
+          },
+        submitHandler: function(form) {
+            $.ajax({
+                type: "POST",
+                url: "send.php",
+                data: $(form).serialize(),
+                success: function () {
+                    $(form)[0].reset();
+                    modal.removeClass('modal--visible');
+                    successForm.toggleClass('form__success--visible');
+                },
+            })
+        }
     });
     
     $('.control__form').validate({
@@ -118,7 +139,8 @@ $(document).ready(function() {
             userEmail: {
               required: true,
               email: true
-            }
+            },
+            controlPolicyCheckbox: "required"
           },
         messages: {
             userName: {
@@ -133,8 +155,22 @@ $(document).ready(function() {
             userEmail: {
               required: "Обязательно укажите email",
               email: "Введите корректный email"
+            },
+            controlPolicyCheckbox: {
+                required: "Обязательное поле"
             }
-          }
+          },
+          submitHandler: function(form) {
+            $.ajax({
+                type: "POST",
+                url: "control-send.php",
+                data: $(form).serialize(),
+                success: function () {
+                    alert('Форма отправлена.Мы свяжемся с вами через 10 минут.');
+                    $(form)[0].reset();
+                },
+            })
+        }
     });
     $('.footer__form').validate({
         errorElement: "div",
@@ -153,6 +189,9 @@ $(document).ready(function() {
             userQuestion:{
                 required: true,
                 minlength: 5
+            },
+            footerPolicyCheckbox: {
+                required: true
             }
           },
         messages: {
@@ -166,10 +205,24 @@ $(document).ready(function() {
                 minlength:"Введите корректный номер телефона"
             },
             userQuestion:{
-              required: "Заполните поле",
-              minlength: "Введите корректный вопрос"
+                required: "Заполните поле",
+                minlength: "Введите корректный вопрос"
+            },
+            footerPolicyCheckbox : {
+                required: "Обязательное поле"
             }
-          }
+          },
+          submitHandler: function(form) {
+            $.ajax({
+                type: "POST",
+                url: "footer-send.php",
+                data: $(form).serialize(),
+                success: function () {
+                    alert('Форма отправлена.Мы свяжемся с вами через 10 минут.');
+                    $(form)[0].reset();
+                },
+            })
+        }
     });
 
     $('[type=tel]').mask('+7(000) 000-00-00',{placeholder: "+7(___) ___-__-__"});
