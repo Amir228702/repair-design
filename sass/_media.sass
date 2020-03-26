@@ -48,8 +48,12 @@
                 margin: 0
     .section
         &-team
-            background-color: $black
+            background-color: #000000
         &-work
+            display: none
+        &-steps
+            display: none
+        &-clients
             display: none
         &-title
             text-align: center
@@ -67,7 +71,7 @@
             margin-bottom: 5rem
         &__main
             &-text
-                color: $light
+                display: none
     .col-40
         order: 1
     .col-60
@@ -86,12 +90,35 @@
             margin-left: 0
         &__item:nth-child(n+8)
             display: none
+    .footer
+        background-color: $black
+        padding: 0
+        &__map
+            max-height: 255px
+        &__coordinations
+            display: flex
+            flex-direction: column-reverse
+            &__main
+                display: flex
+                flex-direction: column
+        &-wrap
+            display: flex
+            flex-direction: column
+            margin-top: 0
+        &__form
+            margin: 0
             
 @media screen and ( max-width:576px)
     .section
         &__control
             background-color: $dark
             color: $light
+            padding-bottom: 0
+    .types
+        padding-top: 0
+        &__section
+            &-title
+                margin-top: 4rem
     .footer
         padding-top: 0
         background-color: #000000
@@ -99,12 +126,20 @@
         &-wrap
             background-color: #000000
         &__menu
+            display: none
+        &__menu
             background-color: #000000
         &__form
             flex-direction: column
             flex-basis: 100%
         &__button
             width: 100%
+    .footer
+        background-color: #000000
+        padding: 0
+        &__map
+            max-width: 20rem
+            margin: 0 auto
     .policy
         &__label--left
             justify-content: start
@@ -118,8 +153,18 @@
                 margin-bottom: 2rem
         &__form
             flex-direction: column
+    .control
+        &__input
+            &-group
+                order: 1
+        &__policy
+            order: 2
+        &__button
+            order: 3
+            margin-bottom: -2rem
 
-            
+
+    
         
     .contacts
         &__phone

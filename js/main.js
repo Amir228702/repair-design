@@ -1,8 +1,36 @@
+/*document.addEventListener("DOMContentLoaded", function(event) { 
+  const modal = document.querySelector('.modal');
+  const modalBtn = document.querySelectorAll('[data-toggle=modal]');
+  const closeBtn=document.querySelector('.modal__close');
+  
+  const switchModal = () =>{
+      modal.classList.toggle('modal--visible');
+  }
+
+  modalBtn.forEach(element =>{
+      element.addEventListener('click', switchModal);
+  });
+  
+  closeBtn.addEventListener('click', switchModal);
+  
+  document.addEventListener("click", e=>{
+      if(e.target==modal){
+          modal.classList.remove("modal--visible");
+      }
+  })
+  document.addEventListener("keyup",e =>{
+      const key = e.keyCode ;
+      if(key===27){
+          document.querySelector(".modal").classList.remove("modal--visible");
+      }
+  })
+})*/
 $(document).ready(function() {
     var modal = $('.modal'),
         modalBtn = $('[data-toggle=modal]'),
         closeBtn  = $('.modal__close'),
         successForm = $('.form__success'),
+        modalDialog = $(".modal__dialog"),
         successClose = $('.success__modal__close');
     successClose.on('click', function(){
         successForm.removeClass('form__success--visible');
@@ -14,9 +42,20 @@ $(document).ready(function() {
         modal.removeClass('modal--visible');
     })
     $(document).keyup(function(event) {
-        if (event.which == "27") {
-          $(".modal").removeClass("modal--visible");
-        }
+      if (event.which == "27") {
+        $(".modal").removeClass("modal--visible");
+      }
+    });
+    //закрыть на esc
+    $(document).on("click", function(event) {
+      if (event.target == ".modal") {
+        modal.removeClass("modal--visible");
+      }
+    });
+    modal.on("click", function(e) {
+      if (!modalDialog.is(e.target) && modalDialog.has(e.target).length === 0) {
+        modal.toggleClass("modal--visible");
+      }
     });
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
@@ -63,12 +102,71 @@ $(document).ready(function() {
     var prev = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
 
+    
+ 
+    
     next.css('left', prev.width() + 10 + bullets.width() + 10)
     bullets.css('left',prev.width() + 10)
-    
+    var steps = new Swiper(".steps__swiper-container", {
+      // Optional parameters
+      loop: true,
+  
+      pagination: {
+        el: ".steps__swiper-pagination",
+        type: "bullets",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".steps__swiper-button-next",
+        prevEl: ".steps__swiper-button-prev"
+      }
+    });
+    var next = $(".steps__swiper-button-next");
+    var prev = $(".steps__swiper-button-prev");
+    var bullets = $(".steps__swiper-pagination");
+  
+    next.css("left", prev.width() + 10 + bullets.width() + 10);
+    bullets.css("left", prev.width() + 10);
+  
+    $(".left-item").on("click", function() {
+      $(".left-item").removeClass("active");
+      $(this).addClass("active");
+      const e = $(this).data("index");
+      steps[0].slideTo(e);
+      steps[1].slideTo(e);
+      steps.on("slideChange", function() {
+        const e = steps[0].activeIndex - 1;
+        if (e === 6) {
+          e = 0;
+        }
+        $(".left-item").removeClass("active");
+        $(".left-item")
+          .eq(e)
+          .addClass("active");
+      });
+    });
+  
+    steps[0].on("slideChange", function() {
+      let e = steps[0].activeIndex - 1;
+      if (e === 6) {
+        e = 0;
+      }
+      $(".left-item").removeClass("active");
+      $(".left-item")
+        .eq(e)
+        .addClass("active");
+    });
     new WOW().init()
 
     $('.modal__form').validate({
+        errorPlacement: function (error, element) {
+            if (element.attr("type") == "checkbox") {
+                return element.next('label').append(error);
+            }
+            else{  
+                error.insertAfter($(element));
+            }
+        },
         errorElement: "div",
         errorClass:"invalid",
         rules: {
@@ -122,6 +220,14 @@ $(document).ready(function() {
     });
     
     $('.control__form').validate({
+        errorPlacement: function (error, element) {
+            if (element.attr("type") == "checkbox") {
+                return element.next('label').append(error);
+            }
+            else{  
+                error.insertAfter($(element));
+            }
+        },
         errorElement: "div",
         errorClass:"invalid",
         rules: {
@@ -173,6 +279,14 @@ $(document).ready(function() {
         }
     });
     $('.footer__form').validate({
+        errorPlacement: function (error, element) {
+            if (element.attr("type") == "checkbox") {
+                return element.next('label').append(error);
+            }
+            else{  
+                error.insertAfter($(element));
+            }
+        },
         errorElement: "div",
         errorClass:"invalid",
         rules: {
@@ -224,68 +338,117 @@ $(document).ready(function() {
             })
         }
     });
-
     $('[type=tel]').mask('+7(000) 000-00-00',{placeholder: "+7(___) ___-__-__"});
+var spinner = $('.ymap-container').children('.loader');
+var check_if_load = false;
+var myMapTemp, myPlacemarkTemp;
 
-    ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-                center: [47.244729, 39.723187],
-                zoom: 9
-            }, {
-                searchControlProvider: 'yandex#search'
-            }),
-    
-            // Создаём макет содержимого.
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-            ),
-    
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: 'Наш офис',
-                balloonContent: 'Вход со двора'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                iconImageHref: 'img/map-marker.svg',
-                // Размеры метки.
-                iconImageSize: [30, 42],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-5, -38]
-            })
-    
-        myMap.geoObjects
-            .add(myPlacemark)
-            .add(myPlacemarkWithContent);
+function init () {
+    var myMapTemp = new ymaps.Map("map-yandex", {
+      center: [55.730138, 37.594238], // координаты центра на карте
+      zoom: 7, // коэффициент приближения карты
+      controls: ['zoomControl', 'fullscreenControl'] // выбираем только те функции, которые необходимы при использовании
     });
-});
-/*
-document.addEventListener("DOMContentLoaded", function(event) { 
-    const modal = document.querySelector('.modal');
-    const modalBtn = document.querySelectorAll('[data-toggle=modal]');
-    const closeBtn=document.querySelector('.modal__close');
+    var myPlacemarkTemp = new ymaps.GeoObject({
+      geometry: {
+          type: "Point",
+          coordinates: [55.730138, 37.594238] // координаты, где будет размещаться флажок на карте
+      }
+    });
+    myMapTemp.geoObjects.add(myPlacemarkTemp); // помещаем флажок на карту
     
-    const switchModal = () =>{
-        modal.classList.toggle('modal--visible');
+    myMapTemp.behaviors.disable('scrollZoom');
+    
+    // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
+    var layer = myMapTemp.layers.get(0).get(0);
+  
+    // Решение по callback-у для определния полной загрузки карты
+    waitForTilesLoad(layer).then(function() {
+      // Скрываем индикатор загрузки после полной загрузки карты
+      spinner.removeClass('is-active');
+    });
+  }
+  
+// Функция для определения полной загрузки карты (на самом деле проверяется загрузка тайлов) 
+function waitForTilesLoad(layer) {
+  return new ymaps.vow.Promise(function (resolve, reject) {
+    var tc = getTileContainer(layer), readyAll = true;
+    tc.tiles.each(function (tile, number) {
+      if (!tile.isReady()) {
+        readyAll = false;
+      }
+    });
+    if (readyAll) {
+      resolve();
+    } else {
+      tc.events.once("ready", function() {
+        resolve();
+      });
     }
+  });
+}
 
-    modalBtn.forEach(element =>{
-        element.addEventListener('click', switchModal);
-    });
+function getTileContainer(layer) {
+  for (var k in layer) {
+    if (layer.hasOwnProperty(k)) {
+      if (
+        layer[k] instanceof ymaps.layer.tileContainer.CanvasContainer
+        || layer[k] instanceof ymaps.layer.tileContainer.DomContainer
+      ) {
+        return layer[k];
+      }
+    }
+  }
+  return null;
+}
+
+// Функция загрузки API Яндекс.Карт по требованию (в нашем случае при наведении)
+function loadScript(url, callback){
+  var script = document.createElement("script");
+
+  if (script.readyState){  // IE
+    script.onreadystatechange = function(){
+      if (script.readyState == "loaded" ||
+              script.readyState == "complete"){
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else {  // Другие браузеры
+    script.onload = function(){
+      callback();
+    };
+  }
+
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+// Основная функция, которая проверяет когда мы навели на блок с классом "ymap-container"
+var ymap = function() {
+  $('.ymap-container').mouseenter(function(){
+      if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
     
-    closeBtn.addEventListener('click', switchModal);
+      // Чтобы не было повторной загрузки карты, мы изменяем значение переменной
+        check_if_load = true; 
     
-    document.addEventListener("click", e=>{
-        if(e.target==modal){
-            modal.classList.remove("modal--visible");
-        }
-    })
-    document.addEventListener("keyup",e =>{
-        const key = e.keyCode ;
-        if(key===27){
-            document.querySelector(".modal").classList.remove("modal--visible");
-        }
-    })
-});*/
+    // Показываем индикатор загрузки до тех пор, пока карта не загрузится
+        spinner.addClass('is-active');
+
+    // Загружаем API Яндекс.Карт
+        loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&loadByRequire=1", function(){
+           // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором "map-yandex"
+           ymaps.load(init);
+        });                
+      }
+    }
+  );  
+}
+
+$(function() {
+
+  //Запускаем основную функцию
+  ymap();
+})
+})
+

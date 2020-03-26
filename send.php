@@ -1,4 +1,6 @@
 <?php
+$mail = new PHPMailer;
+$mail->CharSet='utf-8';
 
 $userName = $_POST['userName'];
 $userEmail = $_POST['userEmail'];
@@ -25,7 +27,7 @@ try {
 
     //Recipients
     $mail->setFrom('makashev.amir.02@gmail.com');
-    $mail->addAddress('makashev.amir.02@yandex.ru');     // Add a recipient
+    $mail->addAddress('makashev.amir.01@mail.ru');     // Add a recipient
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
